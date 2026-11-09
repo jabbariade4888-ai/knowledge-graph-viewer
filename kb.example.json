@@ -1,0 +1,171 @@
+{
+  "meta": {
+    "version": "1",
+    "owner": "",
+    "created": "2026-01-01",
+    "updated": "2026-01-15",
+    "description": "Вымышленный граф для демонстрации интерфейса. Это не личная база и не заметки."
+  },
+  "sources": [
+    {
+      "id": "src:demo-article",
+      "title": "Короткая заметка о графах знаний",
+      "url": "https://example.com/knowledge-graphs",
+      "author": "Example Author",
+      "platform": "example",
+      "added": "2026-01-10",
+      "raw_claim": "Граф связывает источники, понятия и задачи.",
+      "verified_facts": "Текст выдуман для примера и не описывает реальных людей, проекты или переписку."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "task:publish-notes",
+      "type": "task",
+      "title": "Опубликовать заметку",
+      "summary": "Вымышленная задача: подготовить текст и проверить, что в публичной копии нет личных данных.",
+      "tags": ["demo"],
+      "added": "2026-01-10"
+    },
+    {
+      "id": "topic:knowledge",
+      "type": "topic",
+      "title": "Графы знаний",
+      "summary": "Тема демонстрационного набора.",
+      "tags": ["demo"],
+      "added": "2026-01-10"
+    },
+    {
+      "id": "concept:node",
+      "type": "concept",
+      "title": "Узел",
+      "summary": "Элемент графа с названием и категорией.",
+      "tags": ["demo"],
+      "added": "2026-01-10"
+    },
+    {
+      "id": "tool:viewer",
+      "type": "tool",
+      "title": "Просмотрщик графа",
+      "summary": "Приложение, которое рисует узлы и связи из JSON-файла.",
+      "tags": ["demo"],
+      "added": "2026-01-10"
+    },
+    {
+      "id": "claim:public-sample",
+      "type": "claim",
+      "title": "Демоданные не являются базой пользователя",
+      "summary": "Набор собран вручную и не описывает реальных людей или проекты.",
+      "tags": ["demo"],
+      "added": "2026-01-10"
+    },
+    {
+      "id": "person:editor",
+      "type": "person",
+      "title": "Редактор примера",
+      "summary": "Вымышленный автор демонстрационной заметки.",
+      "tags": ["demo"],
+      "added": "2026-01-10"
+    },
+    {
+      "id": "org:example",
+      "type": "org",
+      "title": "Example Press",
+      "summary": "Вымышленная организация.",
+      "tags": ["demo"],
+      "added": "2026-01-10"
+    },
+    {
+      "id": "project:sample-graph",
+      "type": "project",
+      "title": "Демонстрационный граф",
+      "summary": "Публичный пример для этого репозитория.",
+      "tags": ["demo"],
+      "added": "2026-01-10"
+    }
+  ],
+  "edges": [
+    {
+      "from": "src:demo-article",
+      "to": "concept:node",
+      "type": "mentions",
+      "note": "Заметка объясняет, что такое узел."
+    },
+    {
+      "from": "concept:node",
+      "to": "topic:knowledge",
+      "type": "part_of"
+    },
+    {
+      "from": "tool:viewer",
+      "to": "concept:node",
+      "type": "uses"
+    },
+    {
+      "from": "project:sample-graph",
+      "to": "tool:viewer",
+      "type": "built_with"
+    },
+    {
+      "from": "tool:viewer",
+      "to": "project:sample-graph",
+      "type": "implements"
+    },
+    {
+      "from": "claim:public-sample",
+      "to": "src:demo-article",
+      "type": "derived_from"
+    },
+    {
+      "from": "claim:public-sample",
+      "to": "topic:knowledge",
+      "type": "contrasts_with",
+      "note": "Пример не заменяет настоящую базу."
+    },
+    {
+      "from": "task:publish-notes",
+      "to": "claim:public-sample",
+      "type": "addresses"
+    },
+    {
+      "from": "claim:public-sample",
+      "to": "project:sample-graph",
+      "type": "has_limitation"
+    },
+    {
+      "from": "src:demo-article",
+      "to": "topic:knowledge",
+      "type": "scoped_to"
+    },
+    {
+      "from": "concept:node",
+      "to": "task:publish-notes",
+      "type": "relevant_to"
+    },
+    {
+      "from": "tool:viewer",
+      "to": "task:publish-notes",
+      "type": "applicable_to"
+    },
+    {
+      "from": "project:sample-graph",
+      "to": "tool:viewer",
+      "type": "depends_on"
+    },
+    {
+      "from": "concept:node",
+      "to": "topic:knowledge",
+      "type": "is_example_of"
+    },
+    {
+      "from": "src:demo-article",
+      "to": "person:editor",
+      "type": "authored_by"
+    },
+    {
+      "from": "person:editor",
+      "to": "org:example",
+      "type": "part_of"
+    }
+  ]
+}
